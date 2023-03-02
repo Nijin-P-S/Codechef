@@ -1,5 +1,5 @@
 /*
- * Link to the problem : https://www.codechef.com/LP1TO201/problems/TWODISH
+ * Link to the problem : https://www.codechef.com/LP1TO201/problems/PROGLANG
  */
 
 /* package codechef; // don't place package name! */
@@ -18,17 +18,17 @@ class Codechef
 		int t = sc.nextInt();
 		
 		while(t-- > 0){
-		    int N = sc.nextInt();
 		    int A = sc.nextInt();
 		    int B = sc.nextInt();
-		    int C = sc.nextInt();
-		    
-		    if(B >= N && A+C >= N) {
-		        System.out.println("YES");
+		    int ans = 0;
+		    for(int i=1;i<=2; i++){
+		        int x = sc.nextInt();
+		        int y = sc.nextInt();
+		        
+		        if((x == A && y==B) || (x == B && y==A))
+		            ans = i;
 		    }
-		    else{
-		        System.out.println("NO");
-		    }
+		    System.out.println(ans);
 		}
 	}
 }
