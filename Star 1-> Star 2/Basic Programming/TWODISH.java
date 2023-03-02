@@ -1,5 +1,5 @@
 /*
- * Link to the problem : https://www.codechef.com/LP1TO201/problems/IMDB
+ * Link to the problem : 
  */
 
 /* package codechef; // don't place package name! */
@@ -19,22 +19,16 @@ class Codechef
 		
 		while(t-- > 0){
 		    int N = sc.nextInt();
-		    int X = sc.nextInt();
+		    int A = sc.nextInt();
+		    int B = sc.nextInt();
+		    int C = sc.nextInt();
 		    
-		    int maxImdb = Integer.MIN_VALUE;
-		    
-		    for(int i=0; i<N; i++){
-		        int S = sc.nextInt();
-		        int R = sc.nextInt();
-		        
-		        if(S > X)
-		            continue;
-		        else{
-		            if(R > maxImdb)
-		                maxImdb = R;
-		        }
+		    if(B >= N && A+C >= N) {
+		        System.out.println("YES");
 		    }
-		    System.out.println(maxImdb);
+		    else{
+		        System.out.println("NO");
+		    }
 		}
 	}
 }
