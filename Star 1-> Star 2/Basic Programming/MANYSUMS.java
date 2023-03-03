@@ -1,5 +1,5 @@
 /*
- * Link to problem : https://www.codechef.com/LP1TO201/problems/MXEVNSUB
+ * Link to problem : 
  */
 
 /* package codechef; // don't place package name! */
@@ -18,15 +18,14 @@ class Codechef
 		int T = sc.nextInt();
 		
 		while(T-- > 0){
-		    int N = sc.nextInt();
+		    int L = sc.nextInt();
+		    int R = sc.nextInt();
 		    
-		    int sum = (N*(N+1))/2;
-		    
-		    if(sum%2 == 0){
-		        System.out.println(N);
+		    if(L == R){
+		        System.out.println(1);
 		    }
 		    else{
-		        System.out.println(N-1);
+		        System.out.println((R-L+1)+(R-L));
 		    }
 		}
 	}
