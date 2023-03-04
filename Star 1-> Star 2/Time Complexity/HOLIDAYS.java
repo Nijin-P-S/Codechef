@@ -1,5 +1,5 @@
 /*
- * Link to problem : https://www.codechef.com/LP1TO205/problems/CFRTEST
+ * Link to problem : 
  */
 
 /* package codechef; // don't place package name! */
@@ -15,17 +15,24 @@ class Codechef
 	{
 		// your code goes here
 		Scanner sc = new Scanner(System.in);
+		
 		int T = sc.nextInt();
 		
 		while(T-- > 0){
 		    int N = sc.nextInt();
-		    HashSet<Integer> hashSet = new HashSet<>();
+		    int W = sc.nextInt();
 		    
+		    int[] money = new int[N];
 		    for(int i=0; i<N; i++){
-		        int d = sc.nextInt();
-		        hashSet.add(d);
+		        money[i] = sc.nextInt();
 		    }
-		    System.out.println(hashSet.size());
+		    Arrays.sort(money);
+		    int ind = N-1;
+		    int sumMoney = 0;
+		    while(sumMoney < W){
+		        sumMoney+=money[ind--];
+		    }
+		    System.out.println(ind+1);
 		}
 	}
 }
