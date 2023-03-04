@@ -1,5 +1,5 @@
 /*
- * Link to problem : https://www.codechef.com/LP1TO205/problems/PAIREQ
+ * Link to problem : 
  */
 
 /* package codechef; // don't place package name! */
@@ -19,17 +19,13 @@ class Codechef
 		
 		while(T-- > 0){
 		    int N = sc.nextInt();
-		    HashMap<Integer, Integer> freq = new HashMap<>();
-		    int maxFreq = 0;
+		    HashSet<Integer> hashSet = new HashSet<>();
+		    
 		    for(int i=0; i<N; i++){
-		        int elem = sc.nextInt();
-		        if(freq.get(elem) == null){
-		            freq.put(elem, 0);
-		        }
-		        freq.put(elem, freq.get(elem)+1);
-		        maxFreq = Math.max(maxFreq, freq.get(elem));
+		        int d = sc.nextInt();
+		        hashSet.add(d);
 		    }
-		    System.out.println(N-maxFreq);
+		    System.out.println(hashSet.size());
 		}
 	}
 }
