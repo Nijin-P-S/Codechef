@@ -1,5 +1,5 @@
 /*
- * Link to problem : https://www.codechef.com/LP1TO205/problems/HOLIDAYS
+ * Link to problem : 
  */
 
 /* package codechef; // don't place package name! */
@@ -15,24 +15,21 @@ class Codechef
 	{
 		// your code goes here
 		Scanner sc = new Scanner(System.in);
-		
 		int T = sc.nextInt();
 		
 		while(T-- > 0){
 		    int N = sc.nextInt();
-		    int W = sc.nextInt();
-		    
-		    int[] money = new int[N];
-		    for(int i=0; i<N; i++){
-		        money[i] = sc.nextInt();
+		    HashSet<Integer> hashSet = new HashSet<>();
+		    int minReq = Integer.MAX_VALUE;
+		    for(int i=1; i<=N; i++){
+		        int diff = sc.nextInt();
+		        if(diff >= 1 && diff <= 7)
+		            hashSet.add(diff);
+		        if(hashSet.size()==7){
+		            minReq = Math.min(minReq, i);
+		        }
 		    }
-		    Arrays.sort(money);
-		    int ind = N-1;
-		    int sumMoney = 0;
-		    while(sumMoney < W){
-		        sumMoney+=money[ind--];
-		    }
-		    System.out.println(ind+1);
+		    System.out.println(minReq);
 		}
 	}
 }
