@@ -1,5 +1,5 @@
 /*
- * Link to problem : 
+ * Link to problem : https://www.codechef.com/LP1TO205/problems/LUCKFOUR
  */
 
 // We have populated the solutions for the 10 easiest problems for your support.
