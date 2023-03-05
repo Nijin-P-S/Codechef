@@ -1,12 +1,11 @@
 /*
- * Link to problem : https://www.codechef.com/LP1TO205/problems/CM164364
+ * Link to problem : 
  */
 
 /* package codechef; // don't place package name! */
 
 import java.util.*;
 import java.lang.*;
-
 import java.io.*;
 
 /* Name of the class has to be "Main" only if the class is public. */
@@ -20,18 +19,21 @@ class Codechef
 		
 		while(t-- > 0){
 		    int n = sc.nextInt();
-		    int x = sc.nextInt();
+		    int k = sc.nextInt();
+		    long sum = 0;
 		    
-		    HashSet<Integer> unique = new HashSet<>();
-		    for(int i=0; i<n; i++){
-		        unique.add(sc.nextInt());
+		    int[] arr = new int[n];
+		    for(int i=0; i<n; i++)
+		        arr[i] = sc.nextInt();
+		    Arrays.sort(arr);
+		    int left = 0+k-1;
+		    int right = n-k;
+		    int count = 0;
+		    for(int i=left+1; i<right; i++){
+		        count++;
+		        sum+=arr[i];
 		    }
-		    if(n-unique.size()>=x){
-		        System.out.println(unique.size());
-		    }
-		    else{
-		        System.out.println(unique.size()-(x-(n-unique.size())));
-		    }
+		    System.out.println((double)((1.0*sum)/(count*1.0)));
 		}
 	}
 }
