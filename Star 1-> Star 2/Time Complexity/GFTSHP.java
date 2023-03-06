@@ -1,5 +1,5 @@
 /*
- * Link to problem : https://www.codechef.com/LP1TO205/problems/SIMPSTAT
+ * Link to problem : 
  */
 
 /* package codechef; // don't place package name! */
@@ -18,22 +18,27 @@ class Codechef
 		int t = sc.nextInt();
 		
 		while(t-- > 0){
-		    int n = sc.nextInt();
-		    int k = sc.nextInt();
-		    long sum = 0;
+		    int N = sc.nextInt();
+		    int K = sc.nextInt();
 		    
-		    int[] arr = new int[n];
-		    for(int i=0; i<n; i++)
-		        arr[i] = sc.nextInt();
-		    Arrays.sort(arr);
-		    int left = 0+k-1;
-		    int right = n-k;
-		    int count = 0;
-		    for(int i=left+1; i<right; i++){
-		        count++;
-		        sum+=arr[i];
+		    long A[] = new long[N];
+		    for(int i=0; i<N; i++){
+		        A[i] = sc.nextLong();
 		    }
-		    System.out.println((double)((1.0*sum)/(count*1.0)));
+		    Arrays.sort(A);
+		    int count = 0;
+		    int ind = 0;
+		    while(K>=0 && ind < N){
+		        if(K-A[ind] < 0)
+		            break;
+		        K-=A[ind++];
+		        count++;
+		    }
+		    if(K>0 && ind < N){
+		        if(K-(A[ind]*(1/2.0)) >= 0)
+		            count++;
+		    }
+		    System.out.println(count);
 		}
 	}
 }
