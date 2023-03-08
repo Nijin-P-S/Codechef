@@ -1,5 +1,5 @@
 /*
- * Link to problem : https://www.codechef.com/LP1TO202/problems/CARVANS
+ * Link to problem : 
  */
 
 /* package codechef; // don't place package name! */
@@ -15,18 +15,26 @@ class Codechef
 	{
 		// your code goes here
 		Scanner sc = new Scanner(System.in);
-		int t = sc.nextInt();
+		int T = sc.nextInt();
 		
-		while(t-- > 0){
+		while(T-- > 0){
 		    int n = sc.nextInt();
-		    int maxSpeed = Integer.MAX_VALUE;
+		    
+		    int[] score = new int[n];
+		    for(int i=0; i<n; i++){
+		        score[i] = sc.nextInt();
+		    }
+		    
 		    int count = 0;
 		    
 		    for(int i=0; i<n; i++){
-		        int curSpeed = sc.nextInt();
-		        if(curSpeed <= maxSpeed)
+		        int boast = 0;
+		        for(int j=0; j<n; j++){
+		            if(score[j]<=score[i])
+		                boast++;
+		        }
+		        if(boast > n-boast)
 		            count++;
-		        maxSpeed = Math.min(maxSpeed, curSpeed);
 		    }
 		    System.out.println(count);
 		}
