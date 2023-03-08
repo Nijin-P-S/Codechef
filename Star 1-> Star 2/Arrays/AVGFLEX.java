@@ -20,23 +20,22 @@ class Codechef
 		while(T-- > 0){
 		    int n = sc.nextInt();
 		    
-		    int[] score = new int[n];
+		    int[] freq = new int[101];
 		    for(int i=0; i<n; i++){
-		        score[i] = sc.nextInt();
+		        int score = sc.nextInt();
+		        freq[score]++;
 		    }
-		    
-		    int count = 0;
-		    
-		    for(int i=0; i<n; i++){
-		        int boast = 0;
-		        for(int j=0; j<n; j++){
-		            if(score[j]<=score[i])
-		                boast++;
+		    int cnt = 0;
+		    int ans = 0;
+		    for(int i=0; i<101; i++){
+		        if(freq[i] != 0){
+		            cnt+=freq[i];
+		            if(cnt > n-cnt){
+		                ans+=freq[i];
+		            }
 		        }
-		        if(boast > n-boast)
-		            count++;
 		    }
-		    System.out.println(count);
+		    System.out.println(ans);
 		}
 	}
 }
