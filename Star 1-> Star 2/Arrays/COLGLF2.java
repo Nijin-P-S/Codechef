@@ -1,5 +1,5 @@
 /*
- * Link to problem : 
+ * Link to problem : https://www.codechef.com/LP1TO202/problems/COLGLF2?tab=statement
  */
 
 /* package codechef; // don't place package name! */
