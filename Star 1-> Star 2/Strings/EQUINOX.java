@@ -1,5 +1,5 @@
 /*
- * Link to problem : 
+ * Link to problem : https://www.codechef.com/LP1TO203/problems/EQUINOX
  */
 
 /* package codechef; // don't place package name! */
