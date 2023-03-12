@@ -1,5 +1,38 @@
-package Star 1-> Star 2.Strings;
+/*
+ * Link to problem : https://www.codechef.com/LP1TO203/problems/CSUB?tab=statement
+ */
 
-public class CSUB {
-    
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		
+		while(T-- > 0){
+		    int N = sc.nextInt();
+		    long count = 0;
+		    
+		    String s = sc.next();
+		    
+		    for(int i=0; i<N; i++){
+		        if(s.charAt(i) == '0')
+		            continue;
+		        count++;
+		        for(int j=i+1; j<N; j++){
+		            if(s.charAt(j) == '1')
+		                count++;
+		        }
+		    }
+		    System.out.println(count);
+		}
+	}
 }
