@@ -1,5 +1,5 @@
 /*
- * Link to problem : https://www.codechef.com/LP1TO204/problems/SMPAIR
+ * Link to problem : 
  */
 
 /* package codechef; // don't place package name! */
@@ -19,15 +19,19 @@ class Codechef
 		
 		while(T-- > 0){
 		    int N = sc.nextInt();
-		    
-		    int[] arr = new int[N];
+		    int[] s = new int[N];
 		    
 		    for(int i=0; i<N; i++){
-		        arr[i] = sc.nextInt();
+		        s[i] = sc.nextInt();
 		    }
 		    
-		    Arrays.sort(arr);
-		    System.out.println(arr[0]+arr[1]);
+		    Arrays.sort(s);
+		    int min = Integer.MAX_VALUE;
+		    
+		    for(int i=1; i<N; i++){
+		        min = Math.min(min, s[i]-s[i-1]);
+		    }
+		    System.out.println(min);
 		}
 	}
 }
