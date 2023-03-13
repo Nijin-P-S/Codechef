@@ -1,3 +1,7 @@
+/*
+ * Link to problem : 
+ */
+
 /* package codechef; // don't place package name! */
 
 import java.util.*;
@@ -7,7 +11,6 @@ import java.io.*;
 /* Name of the class has to be "Main" only if the class is public. */
 class Codechef
 {
-    
 	public static void main (String[] args) throws java.lang.Exception
 	{
 		// your code goes here
@@ -16,16 +19,15 @@ class Codechef
 		
 		while(T-- > 0){
 		    int N = sc.nextInt();
-		    long count = 0;
 		    
-		    String s = sc.next();
+		    int[] arr = new int[N];
 		    
 		    for(int i=0; i<N; i++){
-		        if(s.charAt(i) == '0')
-		            continue;
-		        count++;
+		        arr[i] = sc.nextInt();
 		    }
-		    System.out.println((count*(count+1))/2);
+		    
+		    Arrays.sort(arr);
+		    System.out.println(arr[0]+arr[1]);
 		}
 	}
 }
